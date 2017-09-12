@@ -34,6 +34,12 @@
           margin-right: 20px;
           padding-top: 5px;
         }
+        #highSchoolBox{
+          overflow: hidden;
+        }
+        #highSchoolBox > .row-fluid{
+          margin-bottom: 25px;
+        }
     </style>
   </head>
   <body>
@@ -110,16 +116,38 @@
                 Add User
           </h2>
         </div>
-      
+        <!-- 登陆信息 -->
+        <div class="row-fluid">
+          <div class="widget widget-padding span12">
+            <div class="widget-header">
+              <i class="icon-list-alt"></i><h5>Login Information</h5>
+            </div>
+            <div class="widget-body">
+              <div class="widget-forms clearfix">
+                <form class="form-horizontal">
+                 <div class="control-group">
+                    <label class="control-label">Username</label>
+                    <div class="controls">
+                      <input class="span7" type="text">
+                    </div>
+                  </div>
+                 <div class="control-group">
+                    <label class="control-label">Password</label>
+                    <div class="controls">
+                      <input class="span7 tip" type="password">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>  
 
         <!-- 基本信息 -->
         <div class="row-fluid">
           <div class="widget widget-padding span12">
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>Name and Address</h5>
-              <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
-              </div>
             </div>
             <div class="widget-body">
               <div class="widget-forms clearfix">
@@ -180,9 +208,6 @@
           <div class="widget widget-padding span12">
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>Job Type</h5>
-              <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
-              </div>
             </div>
             <div class="widget-body">
               <div class="widget-forms clearfix">
@@ -283,9 +308,6 @@
           <div class="widget widget-padding span12">
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>Additional Information</h5>
-              <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
-              </div>
             </div>
             <div class="widget-body">
               <div class="widget-forms clearfix">
@@ -355,12 +377,13 @@
 
         
         <!-- 高中学历信息 -->
+      <div id="highSchoolBox"> 
         <div class="row-fluid">
           <div class="widget widget-padding span12">
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>Education（High School）</h5>
               <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
+                  <a data-title="Add" onclick="addHighSchool()"><i class="icon-plus"></i></a>
               </div>
             </div>
             <div class="widget-body">
@@ -404,18 +427,20 @@
             </div>
           </div>
         </div>
+      </div>
 
 
 
 
 
         <!-- 大学学历信息 -->
+      <div id="collegeSchoolBox"> 
         <div class="row-fluid">
           <div class="widget widget-padding span12">
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>Education（College or Business/Trade School）</h5>
               <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
+                  <a data-title="Add" onclick="addCollegeSchool()"><i class="icon-plus"></i></a>
               </div>
             </div>
             <div class="widget-body">
@@ -459,7 +484,7 @@
             </div>
           </div>
         </div>
-
+      </div>
 
 
 
@@ -470,9 +495,6 @@
           <div class="widget widget-padding span12">
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>Military</h5>
-              <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
-              </div>
             </div>
             <div class="widget-body">
               <div class="widget-forms clearfix">
@@ -522,7 +544,7 @@
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>Work Experience</h5>
               <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
+                  <a data-title="Add" class="tip collapse"><i class="icon-plus"></i></a>
               </div>
             </div>
             <div class="widget-body">
@@ -641,9 +663,6 @@
           <div class="widget widget-padding span12">
             <div class="widget-header">
               <i class="icon-list-alt"></i><h5>References</h5>
-              <div class="widget-buttons">
-                  <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
-              </div>
             </div>
             <div class="widget-body">
               <div class="widget-forms clearfix">
@@ -713,5 +732,6 @@
     <script type="text/javascript" src="assets/js/bootstrap-colorpicker.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-timepicker.js"></script>
+    <script type="text/javascript" src="controller/adduser.js"></script>
   </body>
 </html>
