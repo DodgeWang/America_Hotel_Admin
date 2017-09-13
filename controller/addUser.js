@@ -1,4 +1,5 @@
 $(function() {
+    console.log(window)
     var nowDate = new Date();
     var nowDate_Str = nowDate.getDate()+"-"+(nowDate.getMonth()+1)+"-"+nowDate.getFullYear()
     $('.date-box').attr("value",nowDate_Str);
@@ -149,7 +150,7 @@ function addHighSchool() {
                     <div class="controls">\
                       <div class="input-append date span5 datepicker datepicker-basic" data-date="" data-date-format="dd-mm-yyyy">\
                           <input size="16" type="text" name="Years_Completed" value="">\
-                          <span class="add-on"><i class="icon-th"></i></span>\
+                          <span class="add-on" onclick="wang(this)"><i class="icon-th"></i></span>\
                         </div>\
                     </div>\
                   </div>\
@@ -347,4 +348,14 @@ function addWork(){
 
 function DeleteDom(nowDom){
   $(nowDom).parent().parent().parent().remove();
+}
+
+
+function wang(w){
+  var nowDate = new Date();
+    var nowDate_Str = nowDate.getDate()+"-"+(nowDate.getMonth()+1)+"-"+nowDate.getFullYear()
+    var option = {
+       format:nowDate_Str
+    }
+  $(w).parent().datepicker()
 }
