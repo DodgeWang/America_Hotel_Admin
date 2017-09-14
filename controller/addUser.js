@@ -123,6 +123,15 @@ $(function() {
         // console.log(High_School)
         // console.log(College_School)
         console.log(Work_Experience)
+        var param = {
+          Hight:High_School.join("__"),
+          College: College_School.join("__"),
+          Username:Username
+        }
+
+        $.post("http://192.168.1.69:2000/Users/add",param,function(obj){
+           
+        })
     })
 })
 

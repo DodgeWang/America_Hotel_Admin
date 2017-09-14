@@ -376,7 +376,6 @@
 			return {separator: separator, parts: parts};
 		},
 		parseDate: function(date, format) {
-			console.log(format)
 			var parts = date.split(format.separator),
 				date = new Date(),
 				val;
